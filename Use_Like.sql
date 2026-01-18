@@ -72,6 +72,8 @@ INSERT INTO Employee VALUES
 
 use question;
 
+
+
 SELECT * FROM Employee WHERE emp_name LIKE 'A%a';
 
 SELECT * FROM Employee WHERE email LIKE '%@tcs.com';
@@ -85,29 +87,46 @@ SELECT * FROM Employee WHERE email LIKE '%\_%' AND email NOT LIKE '%\_%\_%';
 SELECT * FROM Employee WHERE phone LIKE '9%0';
 
 SELECT * FROM Employee WHERE emp_name LIKE '%ee%';
+
 select * from employee where emp_name like concat(emp_name,"%");
+
 SELECT * FROM Employee WHERE city LIKE '______';
 
-SELECT * FROM Employee
-WHERE email LIKE '%0@%' 
-   OR email LIKE '%1@%' 
-   OR email LIKE '%2@%' 
-   OR email LIKE '%3@%' 
-   OR email LIKE '%4@%' 
-   OR email LIKE '%5@%' 
-   OR email LIKE '%6@%' 
-   OR email LIKE '%7@%' 
-   OR email LIKE '%8@%' 
-   OR email LIKE '%9@%';
+SELECT * FROM Employee WHERE email LIKE '%0@%'
+  OR email LIKE '%1@%'
+  OR email LIKE '%2@%' 
+  OR email LIKE '%3@%' 
+  OR email LIKE '%4@%'
+  OR email LIKE '%5@%' 
+  OR email LIKE '%6@%' 
+  OR email LIKE '%7@%'
+  OR email LIKE '%8@%'
+  OR email LIKE '%9@%';
 
-SELECT * FROM Employee
-WHERE emp_name LIKE '_%r'
-AND emp_name NOT LIKE 'A%r'
-AND emp_name NOT LIKE 'E%r'
-AND emp_name NOT LIKE 'I%r'
-AND emp_name NOT LIKE 'O%r'
-AND emp_name NOT LIKE 'U%r';
+SELECT * FROM Employee WHERE emp_name LIKE '_%r'
+  AND emp_name NOT LIKE 'A%r'
+  AND emp_name NOT LIKE 'E%r'
+  AND emp_name NOT LIKE 'I%r'
+  AND emp_name NOT LIKE 'O%r'
+  AND emp_name NOT LIKE 'U%r';
 
-SELECT * FROM Employee
-WHERE email LIKE '%.%@%';
+SELECT * FROM Employee WHERE email LIKE '%.%@%';
+
+SELECT * FROM Employee WHERE email LIKE '%.%@%';
+
+select * from employee where department like "__T%";
+
+
+select * from employee where email like "_______________%@%";
+
+select * from employee where emp_name like"_____%"; 
+
+select * from employee where email not like "%_%";
+
+select * from employee where city like "D%" and city like "_____";
+
+select * from employee where emp_name like "__";
+
+select * from employee where email like "%.com" and not email like "%@gamil.com";
+
 
