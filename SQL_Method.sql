@@ -100,4 +100,7 @@ select dept, count(emp_id) total_employees from employees group by dept having c
 
 select dept, max(salary) as max_salary , min(salary) as min_salary from employees group by dept ;
 
+select dept, avg(salary) as avg_salary from employees group by dept;
+
+select dept, avg(salary) as avg_salary from employees group by dept having avg(salary)>70000;
 
