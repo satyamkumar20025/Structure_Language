@@ -40,4 +40,44 @@
 
 20. Find employees whose department is not mapped to any project.
 
+  
+#NOt in
+
+select * from employee where department not in ("it","hr");
+
+select * from employee where city not in ("delhi","patna","Lucknow","gurgaon", "pune ","mumbbai");
+
+select * from employee where email not in("gmail.com","yahoo.com","campany.com");
+
+select * from employee where year(joining_date)not in(2019,2020,2021);
+
+select * from employee where city not in("delhi","mumbbai","pune");
+
+select * from employee where department not in("audit");
+
+select * from employee where month(joining_date) not in(2021,2022,2023);
+
+select * from employee where emp_id not in ("102");
+
+select * from employee where email not in("gmail.com","yahoo.com","outlock.com");
+
+select * from employee where department not in ("finance");
+
+select * from employee where city not in("delhi","mumbbai","pune");
+
+select * from employee where month(Joining_data) not in (1,2,3,4,5,6);
+
+select * from employee where department not in("sales","marketing","support");
+
+select * from employee WHERE LEFT (PHONE,3) not IN ('777','91','987');
+
+select * from employee where emp_name not in("amit sharma","rahul","satam");
+
+select * from employee where salary not in (75000);
+
+select * from employee where  city not in("gaya");
+
+select * from employee where  department not in ("Marketing");
+
+
 
