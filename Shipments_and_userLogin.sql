@@ -35,8 +35,13 @@ INSERT INTO shipments VALUES
 (304, '2024-01-18', NULL, 'PENDING');
 
 select * from shipments;
+
 select * from shipments where expected_date = delivery_date;
+
 ##select *from shipments where  delivery_date!= 0 and payment_status='paid';
+or
+Select * from shipments  where delivery_date is null and payment_status like 'paid';
+
 select *from shipments where not payment_status='paid';
 
 CREATE TABLE user_logins (
@@ -53,6 +58,9 @@ INSERT INTO user_logins VALUES
 (404, 2, 'ACTIVE');
 
 select * from user_logins ;
+
 select * from user_logins where login_attempts > 3 and not account_status ='active';
+
 select * from user_logins where account_status!='active';
+
 select * from user_logins where login_attempts <=2;
