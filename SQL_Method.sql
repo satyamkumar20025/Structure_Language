@@ -104,3 +104,31 @@ select dept, avg(salary) as avg_salary from employees group by dept;
 
 select dept, avg(salary) as avg_salary from employees group by dept having avg(salary)>70000;
 
+select hire_year , count(emp_id) as total_employees from employees group by hire_year;
+
+select hire_year, sum(salary) as total_salary from employees group by hire_year;
+
+select dept , sum(salary) as total_salary_40000 from employees group by dept having sum(salary)> 40000;
+
+select dept , sum(salary) as total_salary_100000 from employees group by dept having sum(salary)<100000;
+
+select dept, sum(salary) as total_salary ,avg(salary) as avg_salary from employees  group by dept having avg(salary)<50000 and sum(salary)>200000;
+
+select dept, sum(bonus) as total_bonus from employees group by dept;
+
+select dept, max(salary) - min(salary) range_salary from employees group by dept having max(salary) - min(salary) > 30000; 
+
+select dept, count(salary) as total_salary from employees group by  dept having  count(salary);
+
+select dept, sum(salary) as total_salary from employees group by dept having sum(salary) between 200000 and 800000;
+
+select dept, count(emp_id) as total_salary from employees group by dept having count(salary)>10;
+
+select dept, avg(salary) ,min(salary), count(emp_id) from employees group by dept having avg(salary)>60000 and min(salary)>35000 and count(emp_id)>5;
+
+select dept from employees group by dept having avg(salary)>60000 and min(salary)>35000 and count(emp_id)>5;
+
+select dept from employees group by dept having max(salary)>90000 and avg(salary)>65000 and count(*)>3;
+
+select dept from employees group by dept having max(salary)>90000 and avg(salary)>65000 and count(emp_id)>3;
+
