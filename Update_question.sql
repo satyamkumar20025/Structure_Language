@@ -18,69 +18,62 @@ Update status='inactive' for employees not incremented in last 2 years.
 Increase salary by 12% only for Pune employees except HR.
 Set salary = 35000 for minimum salary employee.
 Swap status active ↔ inactive for Angular department.
-
-
 ##1
-set sql_safe_updates =0;
 update employees set salary=salary *1.10 where dept ='java' and city ='delhi' and emp_id =107 ;
-set sql_safe_updates =1;
+
 
 ##2
 update employees set status ='inactive'
 where experience<2;
 
 ## 3
-update employee set salary = salary +5000 where last_increment<2022;
+update employees set salary = salary +5000 where last_increment<2022;
 
 -- 4
-UPDATE employee
+UPDATE employees
 SET salary = salary * 0.85
 WHERE email LIKE '%@gmail.com'
 AND salary > 80000;
 
 -- 5
-UPDATE employee
+UPDATE employees
 SET city = 'Gurgaon'
 WHERE city = 'Delhi'
 AND salary < 50000;
 
 -- 6
-UPDATE employee
+UPDATE employees
 SET salary = 60000
 WHERE dept = 'HR'
 AND experience BETWEEN 2 AND 4;
 
 -- 7
-UPDATE employee
-SET salary = salary * 1.20
-WHERE experience = (SELECT MAX(experience) FROM employee);
+#UPDATE employees SET salary = salary * 1.20 WHERE 
 
 -- 8
-UPDATE employee
+UPDATE employees
 SET status = 'active'
 WHERE joining_date > '2023-01-01';
 
 -- 9
-UPDATE employee
+UPDATE employees
 SET email = LOWER(email);
 
 -- 10
-UPDATE employee
+UPDATE employees
 SET experience = experience + 1
 WHERE joining_date < '2020-01-01';
 
 -- 11
-UPDATE employee
-SET salary = (SELECT AVG(salary) FROM employee)
-WHERE salary < 40000;
+#UPDATE employees SET salary = 
 
 -- 12
-UPDATE employee
+UPDATE employees
 SET dept = 'Support'
 WHERE name LIKE '%a';
 
 -- 13
-UPDATE employee
+UPDATE employees
 SET salary = salary + 5000
 WHERE LENGTH(name) > 5;
 
@@ -90,34 +83,30 @@ set salary =salary +5000
 where name like '_____';
 
 -- 14
-UPDATE employee
+UPDATE employees
 SET last_increment = 2024
 WHERE last_increment < YEAR(joining_date);
 
 -- 15
-UPDATE employee
+UPDATE employees
 SET salary = salary + (experience * 1000);
 
 -- 16
-UPDATE employee
+UPDATE employees
 SET dept = 'Java-Core'
 WHERE dept = 'Java'
 AND salary < 80000;
 
 -- 17
-UPDATE employee
+UPDATE employees
 SET status = 'inactive'
 WHERE last_increment <= YEAR(CURDATE()) - 2;
 
 -- 18
-UPDATE employee
+UPDATE employees
 SET salary = salary * 1.12
 WHERE city = 'Pune'
 AND dept <> 'HR';
 
 -- 19
-UPDATE employee
-SET salary = 35000
-WHERE salary = (SELECT MIN(salary) FROM employee);
-
-
+#UPDATE employees SET salary = 35000 WHERE salary = 
